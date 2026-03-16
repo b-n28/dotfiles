@@ -1,0 +1,38 @@
+#!/bin/sh
+
+#  /$$$$$$$   /$$$$$$  /$$$$$$$  /$$      /$$ /$$      /$$
+# | $$__  $$ /$$__  $$| $$__  $$| $$  /$ | $$| $$$    /$$$
+# | $$  \ $$| $$  \__/| $$  \ $$| $$ /$$$| $$| $$$$  /$$$$
+# | $$$$$$$ |  $$$$$$ | $$$$$$$/| $$/$$ $$ $$| $$ $$/$$ $$
+# | $$__  $$ \____  $$| $$____/ | $$$$_  $$$$| $$  $$$| $$
+# | $$  \ $$ /$$  \ $$| $$      | $$$/ \  $$$| $$\  $ | $$
+# | $$$$$$$/|  $$$$$$/| $$      | $$/   \  $$| $$ \/  | $$
+# |_______/  \______/ |__/      |__/     \__/|__/     |__/
+#
+# github.com/b-n28/desktop.git
+
+~/.config/bspwm/scripts/autostart.sh
+
+~/.config/polybar/launch.sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc config border_width         2
+bspc config window_gap           5
+
+bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9
+
+bspc config split_ratio 0.52
+
+# Gapless when 1 window
+bspc config single_monocle true
+bspc config gapless_monocle true
+bspc config borderless_monocle true
+
+# Window rules
+bspc rule -a "discord" desktop=^1 follow=off
+bspc rule -a "Supersonic" desktop=^4 follow=off
+bspc rule -a "steam" desktop=^5 follow=off
+bspc rule -a "Lutris" desktop=^5 follow=off
+bspc rule -a "Thunar" state=floating
+
