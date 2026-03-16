@@ -9,7 +9,7 @@
 # | $$$$$$$/|  $$$$$$/| $$      | $$/   \  $$| $$ \/  | $$
 # |_______/  \______/ |__/      |__/     \__/|__/     |__/
 #
-# github.com/b-n28/desktop.git
+# github.com/b-n28/dotfiles.git
 
 ~/.config/bspwm/scripts/autostart.sh
 
