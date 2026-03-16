@@ -9,10 +9,6 @@ xrandr --output DP-1 --primary --mode 2560x1440 -r 165 \
 xrdb ~/.Xresources
 xsetroot -cursor_name left_ptr &
 
-xset -dpms
-xset s off
-xset s noblank
-
 export SSH_AUTH_SOCK
 export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
