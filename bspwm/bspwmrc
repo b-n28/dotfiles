@@ -9,11 +9,12 @@
 # | $$$$$$$/|  $$$$$$/| $$      | $$/   \  $$| $$ \/  | $$
 # |_______/  \______/ |__/      |__/     \__/|__/     |__/
 #
-# github.com/b-n28/dotfiles.git
+# github.com/b-n28/desktop.git
 
 ~/.config/bspwm/scripts/autostart.sh
 
 ~/.config/polybar/launch.sh
+pactl set-source-volume alsa_input.usb-Razer_Inc_Razer_Seiren_Mini_UC2335L03205772-00.mono-fallback 100%
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
