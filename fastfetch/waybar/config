@@ -1,0 +1,87 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 12, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "dwl/tags",
+        "custom/sep",
+        "dwl/window",
+        "custom/sep",
+        "custom/layout",
+        "custom/media"
+    ],
+    "modules-center": [
+        "custom/logo"
+    ],
+    "modules-right": [
+        "mpd",
+        "cpu",
+        "custom/sep",
+        "memory",
+        "custom/sep",
+        "temperature",
+        "clock",
+        "custom/sep",
+        "tray",
+    ],
+    // Modules configuration
+    "dwl/window": {
+        "format": "{title}",
+        "max-length": 50,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "Firefox - $1",
+            "Mozilla Firefox": "Firefox",
+        }
+    },
+
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10,
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}%  "
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    
+    "custom/sep": {
+        "format": " | "
+    },
+
+    "custom/logo": {
+        "format": " "
+    },
+
+    "custom/layout": {
+        "exec": "/home/borna/.config/waybar/scripts/layout.sh",
+        "interval": 0,
+        "format": "{}",
+    },
+
+}
